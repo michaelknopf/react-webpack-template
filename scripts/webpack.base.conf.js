@@ -5,11 +5,6 @@ var projectRoot = path.resolve(__dirname, '../')
 var webpack = require('webpack')
 
 var env = process.env.NODE_ENV
-// check env & config/index.js to decide weither to enable CSS Sourcemaps for the
-// various preprocessor loaders added to vue-loader at the end of this file
-var cssSourceMapDev = (env === 'development' && config.dev.cssSourceMap)
-var cssSourceMapProd = (env === 'production' && config.build.productionSourceMap)
-var useCssSourceMap = cssSourceMapDev || cssSourceMapProd
 
 module.exports = {
     entry: {
@@ -21,25 +16,19 @@ module.exports = {
         filename: '[name].js'
     },
     resolve: {
-//        extensions: ['', '.js', '.vue'],
         extensions: ['', '.js'],
-        fallback: [path.join(__dirname, '../node_modules')],
+        fallback: [`${projectRoot}/node_modules`],
         alias: {
-//            'vue$': 'vue/dist/vue',
-            'src': path.resolve(__dirname, '../src'),
-            'assets': path.resolve(__dirname, '../src/assets'),
-            'components': path.resolve(__dirname, '../src/components')
+            'src': `${projectRoot}/src`,
+            'assets': `${projectRoot}/assets`,
+            'components': `${projectRoot}/src/components`
         }
     },
     resolveLoader: {
-        fallback: [path.join(__dirname, '../node_modules')]
+        fallback: [`${projectRoot}/node_modules`]
     },
     module: {
         loaders: [
-//            {
-//                test: /\.vue$/,
-//                loader: 'vue'
-//            },
             {
                 test: /\.css$/,
                 loader: 'style-loader!css-loader'
@@ -63,7 +52,7 @@ module.exports = {
             },
             {
                 test: /\.jsx$/,
-                loader: 'babel',
+                loader: 'babel-loader',
                 include: [
                     projectRoot
                 ],
@@ -76,7 +65,7 @@ module.exports = {
             },
             {
                 test: /es6\.js$/,
-                loader: 'babel',
+                loader: 'babel-loader',
                 include: [
                     projectRoot
                 ],
@@ -97,7 +86,7 @@ module.exports = {
             },
             {
                 test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
-                loader: 'url',
+                loader: 'url-loader',
                 query: {
                     limit: 10000,
                     name: utils.assetsPath('img/[name].[hash:7].[ext]')
@@ -113,16 +102,6 @@ module.exports = {
             }
         ]
     },
-//    vue: {
-//        loaders: utils.cssLoaders({
-//            sourceMap: useCssSourceMap
-//        }),
-//        postcss: [
-//            require('autoprefixer')({
-//                browsers: ['last 2 versions']
-//            })
-//        ]
-//    },
     plugins: [
         new webpack.ProvidePlugin({
             $: 'jquery',
