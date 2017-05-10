@@ -16,9 +16,7 @@ module.exports = {
         app: './src/main.js'
     },
     output: {
-//        path: config.build.assetsRoot,
         path: config.build.root,
-//        publicPath: process.env.NODE_ENV === 'production' ? config.build.assetsPublicPath : config.dev.assetsPublicPath,
         publicPath: process.env.NODE_ENV === 'production' ? config.build.publicPath : config.dev.publicPath,
         filename: '[name].js'
     },

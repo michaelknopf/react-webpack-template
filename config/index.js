@@ -1,6 +1,5 @@
 var path = require('path')
 var root = path.resolve(__dirname, "../build/")
-console.log(path.resolve(__dirname, root + '/index.html'))
 
 module.exports = {
 
@@ -10,7 +9,9 @@ module.exports = {
         root: root,
         assetsSubDirectory: 'static',
         publicPath: 'assets/',
+
         productionSourceMap: true,
+
         // Gzip off by default as many popular static hosts such as
         // Surge or Netlify already gzip all static assets for you.
         // Before setting to `true`, make sure to:
@@ -26,6 +27,7 @@ module.exports = {
         assetsSubDirectory: 'static',
         publicPath: '/',
         proxyTable: {},
+
         // CSS Sourcemaps off by default because relative paths are "buggy"
         // with this option, according to the CSS-Loader README
         // (https://github.com/webpack/css-loader#sourcemaps)
