@@ -16,7 +16,7 @@ module.exports = {
         filename: '[name].js'
     },
     resolve: {
-        extensions: ['', '.js'],
+        extensions: ['', '.js', '.jsx'],
         fallback: [`${projectRoot}/node_modules`],
         alias: {
             'src': `${projectRoot}/src`,
