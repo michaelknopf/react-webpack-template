@@ -1,9 +1,13 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
+
+import Hello from './Hello'
+import World from './World'
  
 class App extends React.Component {
+
     render() {
-        return <h1>Hello World</h1>
+        return <div><Hello/><World/></div>
     }
 }
  

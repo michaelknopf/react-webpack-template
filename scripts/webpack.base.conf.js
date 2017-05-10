@@ -58,10 +58,7 @@ module.exports = {
                 ],
                 exclude: [
                     /node_modules/
-                ],
-                query: {
-                    presets: ["es2015", "stage-2"]
-                }
+                ]
             },
             {
                 test: /es6\.js$/,

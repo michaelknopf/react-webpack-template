@@ -1,7 +1,7 @@
 {
-  "name": "webpack-template",
+  "name": "react-webpack-template",
   "version": "1.0.0",
-  "description": "Webpack template",
+  "description": "React webpack template",
   "author": "Michael Knopf <mknopf@acumenllc.com>",
   "private": true,
   "scripts": {
@@ -17,7 +17,6 @@
     "font-awesome": "^4.7.0",
     "font-awesome-webpack": "0.0.4",
     "jquery": "^3.1.1",
-    "loadash": "0.0.1",
     "lodash": "^4.17.2",
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
@@ -27,6 +26,7 @@
     "autoprefixer": "^6.4.0",
     "babel-core": "^6.0.0",
     "babel-loader": "^6.0.0",
+    "babel-plugin-react-pug": "^0.4.9",
     "babel-plugin-transform-runtime": "^6.0.0",
     "babel-polyfill": "^6.16.0",
     "babel-preset-es2015": "^6.0.0",
@@ -66,7 +66,6 @@
     "phantomjs-prebuilt": "^2.1.3",
     "promise-polyfill": "^6.0.2",
     "pug": "^2.0.0-beta6",
-    "pug-html-loader": "^1.1.0",
     "pug-loader": "^2.3.0",
     "sass-loader": "^4.0.2",
     "semver": "^5.3.0",
